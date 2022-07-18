@@ -1,0 +1,9 @@
+= form_with model: @category, local: true do |f|
+  = render 'shared/errors', resource: @category
+
+  div
+    = f.label :title
+    = f.text_field :title, id: :category_title
+  div
+    = f.submit
+    

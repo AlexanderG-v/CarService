@@ -1,0 +1,7 @@
+tr
+  td= category.title
+  td=> link_to 'Show', category_path(category)
+  td=< link_to 'Delete', category_path(category),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }
+              
