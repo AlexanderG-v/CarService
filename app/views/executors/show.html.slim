@@ -1,0 +1,10 @@
+h1= "Executor name: #{@executor.name}"
+
+div
+  strong Executor name: 
+  =@executor.name
+dev 
+  => link_to 'Edit', edit_executor_path(@executor)
+  '|
+  =< link_to  'Back', executors_path
+  

@@ -1,0 +1,9 @@
+= form_with model: @executor, local: true do |f|
+  = render 'shared/errors', resource: @executor
+
+  div
+    = f.label :name
+    = f.text_field :name, id: :executor_name
+  div
+    = f.submit
+    

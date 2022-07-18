@@ -1,0 +1,7 @@
+tr
+  td= executor.name
+  td=> link_to 'Show', executor_path(executor)
+  td=< link_to 'Delete', executor_path(executor),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }
+              
