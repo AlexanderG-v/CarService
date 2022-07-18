@@ -9,6 +9,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
+    @order.services.new
   end
 
   def create
@@ -44,6 +45,6 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:customer_name)
+    params.require(:order).permit(:customer_name, :caterory_id, :executor_id, services_attributes: [:title, :category_id, :executor_id])
   end
 end

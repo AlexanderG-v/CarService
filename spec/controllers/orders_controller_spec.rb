@@ -36,6 +36,10 @@ RSpec.describe OrdersController, type: :controller do
       expect(assigns(:order)).to be_a_new(Order)
     end
 
+    it 'assigns new Order to @order with Service' do
+      expect(assigns(:order).services.first).to be_a_new(Service)
+    end
+
     it 'render show new' do
       expect(response).to render_template :new
     end
