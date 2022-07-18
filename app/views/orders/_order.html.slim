@@ -1,0 +1,9 @@
+tr
+  td= order.id
+  td= order.customer_name
+  td= order.created_at.to_date
+  td=> link_to 'Show', order_path(order)
+  td=< link_to 'Delete', order_path(order),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }
+              

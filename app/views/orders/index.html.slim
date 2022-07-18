@@ -1,0 +1,11 @@
+h1 All Orders
+p= link_to 'New order', new_order_path
+
+table
+  tr
+    th Order number
+    th Customer name
+    th Date of creation
+    th colspan=2 Actions
+
+  = render @orders

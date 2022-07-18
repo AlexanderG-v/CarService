@@ -1,0 +1,8 @@
+= render 'shared/errors', resource: @order
+
+= form_with model: @order, local: true do |f|
+  p
+    = f.label :customer_name
+    = f.text_field :customer_name, id: :order_customer_name
+
+  = f.submit
