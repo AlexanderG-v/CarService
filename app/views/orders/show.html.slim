@@ -7,9 +7,13 @@ div
 div
   strong Servises: 
   -@order.services.each do |s|
-    = s.title
+    div
+      => s.title
+      '-
+      = s.executor.name
+      
 dev 
   => link_to 'Edit', edit_order_path(@order)
   '|
-  =< link_to  'Back', orders_path
+  = link_to  'Back', orders_path
   

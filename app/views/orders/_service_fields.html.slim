@@ -1,0 +1,8 @@
+div
+  => form.label :title
+  => form.text_field :title
+  => form.label :cateroy_id
+  => form.collection_select :category_id, Category.all, :id, :title, promt: true
+  => form.label :executor_id
+  => form.collection_select :executor_id, Executor.all, :id, :name, prompt: true
+  = link_to_remove_nested(form, link_text: 'Delete')

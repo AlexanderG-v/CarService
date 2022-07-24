@@ -1,21 +1,13 @@
 = render 'shared/errors', resource: @order
 
-= form_with model: @order, local: true do |f|
-  div
-    = f.label :customer_name
-    = f.text_field :customer_name, id: :order_customer_name
+= form_with model: @order, local: true do |form|
+  => form.label :customer_name
+  = form.text_field :customer_name, id: :order_customer_name
   
-  div Services:
-  div 
-    = f.fields_for :services do |s|
-      div 
-        = s.label :title
-        = s.text_field :title
-      div
-        = s.label :cateroy_id
-        = s.collection_select :category_id, Category.all, :id, :title, promt: true
-      div
-        = s.label :executor_id
-        = s.collection_select :executor_id, Executor.all, :id, :name, prompt: true
-
-  = f.submit
+  h3 Services:
+  = link_to_add_nested(form, :services, '#services', link_text: 'Add service')
+  div id='services'
+    = form.fields_for :services do |service_f|
+      = render 'service_fields', form: service_f
+    
+  = form.submit
